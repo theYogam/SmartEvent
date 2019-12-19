@@ -1,0 +1,193 @@
+{% extends 'website/base.html' %}
+{% load i18n static staticfiles humanize user_agents webdesign %}
+
+{% block page_title %}
+    <title>ikwen Daraja Conf 2019</title>
+{% endblock %}
+
+{% block header_brand %}
+    <a class="navbar-brand hidden-xs" href="{{ service.url }}">
+        <img src="{% static "smartevent/img/logo-ikwen_for-header_white.png" %}" alt="ikwen-logo" style="height: 30px; ">
+    </a>
+    <strong class="navbar-brand visible-xs">{{ service.project_name }}</strong>
+{% endblock %}
+
+{% block head_style %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'smartevent/css/daraja_conference_2019.css' %}?v=19.12.03">
+
+{% endblock %}
+
+{% block content %}
+    <div>
+        <div class="banner-top">
+            <div class="banner-container">
+                <div class="container">
+                    <div class="col-md-8 parent-header">
+                        <div class="header">
+                            {% blocktrans %}
+                                <h1 class="welcome-message">Welcome to ikwen Daraja conf 2019 !</h1>
+                                <p style="font-weight: lighter; text-align: justify">
+                                    <h3>Thanks for attending this conference</h3>
+
+                                </p>
+                            {% endblocktrans %}
+{#                                    In case you missed any of the sessions or want to go back and rewatch your favorites, we’ve got you covered. Recordings of all talks are posted on YouTube. Keep the conversation going using #ikwenConf2019.#}
+{#                                <div class="form-row col-sm-6 col-xs-12 watch-previous-session">#}
+{#                                    <button type="button" class="btn btn-primary btn-block">WATCH SESSION RECORDINGS</button>#}
+{#                                </div>#}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="second-section">
+             <div id="content" class="container">
+        {#    <div id="content" class="container" style="background-image: url({% static 'enfinchezmoi/img/video_home_page.gif' %}); background-size: cover; background-repeat: no-repeat; background-position: center;height: 500px; width: inherit;">#}
+                <div class="col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                    <h2 class="confirm-participation">{% trans "Confirm your participation" %}</h2>
+                    <form method="post">{% csrf_token %}
+                        {% if form.errors %}
+                            <div class="errorlist">{{ form.errors }}</div>
+                        {% endif %}
+                        <div class="form-group">
+                            <label for="first-name">{% trans "First name:" %}</label>
+                            <input id="first-name" name="first_name" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">{% trans "Last name:" %}</label>
+                            <input id="last-name" name="last_name" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">{% trans "Email:" %}</label>
+                            <input id="email" name="email" type="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">{% trans "Phone:" %}</label>
+                            <input id="phone" name="phone" type="text" class="form-control">
+                        </div>
+                        <div class="form-group occupation">
+                            <label for="occupation">{% trans "Occupation:" %}</label>
+                            <select id="occupation" name="occupation" class="form-control">
+                                <option selected>{% trans "Entrepreneur" %}</option>
+                                <option>{% trans "Digital marketist" %}</option>
+                                <option>{% trans "Media professional" %}</option>
+                                <option>{% trans "Influencer" %}</option>
+                                <option>{% trans "Seeking to become digital marketist" %}</option>
+                                <option>{% trans "Other" %}</option>
+                            </select>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group other-occupation" style="display: none">
+                            <input type="text" placeholder="Specify your occupation" class="form-control">
+                            <div class="clearfix"></div>
+                        </div>
+                       <div class="form-group">
+                           <label for="live-word">{% trans "Leave some words:" %}</label>
+                           <textarea class="form-control" name="opinion"></textarea>
+                       </div>
+                        <div class="form-row col-md-6 col-sm-6 submit-container" style="float: none; margin: 5vh auto;">
+                            <button class="btn btn-primary btn-block submit">{% trans "Submit" %}</button>
+                        </div>
+                    </form>
+                </div>
+
+                {#    Modal declaration : BEGIN #}
+{#                <div class="modal fade" id="thanks" tabindex="-1" role="dialog">#}
+{#                    <div class="modal-dialog" role="document">#}
+{#                        <div class="modal-content modal-info" style="background-image: url({% static 'daraja/img/architecture-entreprise.jpg' %});">#}
+{#                            <div class="modal-body text-center">#}
+{#                                <h4 id="thanks-msg" style="color: #fff;">{% blocktrans %}ikwen thanks you for your kind attention.{% endblocktrans %}</h4>#}
+{#                            </div>#}
+{#                            <div>#}
+{#                                <div class="actions">#}
+{#                                    <div class="col-xs-12 col-sm-4 col-md-3 pull-right action">#}
+{#                                        <button class="btn btn-default btn-block btn-sm" data-dismiss="modal" aria-label="OK">{% trans "OK" %}</button>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="clearfix"></div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+                {#    Modal declaration : END #}
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="container">
+            <div class="row" style="margin-bottom: 15px">
+                <div class="col-sm-3" style="margin-top: 4vh; text-align: center;">
+                    <a href="{% url 'daraja:home' %}">
+                        <img class="footer-logo" src="{% static 'smartevent/img/New logo ikwen without slogan (niveau de blanc)-.png' %}" style="max-width: 7vw;"/>
+                        <h4 class="logo footer-title">ikwen</h4>
+                    </a>
+                </div>
+                <div class="col-sm-3 col-xs-4 footer-">
+                    <h5 style="color: #ffffff; font-weight: bold; font-size: 2vw; margin-top: 5vh;">{% trans 'Get started' %}</h5>
+                    <ul style="font-size: 1.2vw; line-height: 1.7; list-style-type: none; padding-left: 0">
+                        <li><a style="color: #d2d1d1;" href="{% url 'daraja:home' %}">{% trans 'Home' %}</a></li>
+                        <li><a style="color: #d2d1d1;" href="{% url 'ikwen:sign_in' %}">{% trans 'Sign In' %}</a></li>
+{#                        <li><a style="color: #d2d1d1;" href="#" target="_blank">{% trans 'Downloads' %}</a></li>#}
+                    </ul>
+                </div>
+                <div class="col-sm-3 col-xs-4 footer-">
+                    <h5 style="color: #ffffff; font-weight: bold; font-size: 2vw; margin-top: 5vh;">{% trans 'About us' %}</h5>
+                    <ul style=" font-size: 1.2vw; line-height: 1.7; list-style-type: none; padding-left: 0">
+                        <li><a style="color: #d2d1d1;" href="{% url 'about' %}" target="_blank">{% trans 'Our Company' %}</a></li>
+                        {% include 'website/snippets/language_switcher.html' %}
+{#                        <li><a style="color: #d2d1d1;" href="#" target="_blank">{% trans 'Contact us' %}</a></li>#}
+{#                        <li><a style="color: #d2d1d1;" href="{% url 'daraja:for_businesses' %}" target="_blank">{% trans 'For business' %}</a></li>#}
+                    </ul>
+                </div>
+                <div class="col-sm-3 col-xs-4 footer-">
+                    <h5 style="color: #ffffff; font-weight: bold; font-size: 2vw; margin-top: 5vh;">Support</h5>
+                    <ul style="font-size: 1.2vw; line-height: 1.7; list-style-type: none; padding-left: 0">
+                        <li><a style="color: #d2d1d1;" href="http://blog.ikwen.com/" target="_blank">Blog</a></li>
+                        <li><a style="color: #d2d1d1;" href="http://support.ikwen.com/" target="_blank">{% trans 'Help desk' %}</a></li>
+{#                        <li><a style="color: #d2d1d1; text-decoration: none" href="#" target="_blank">Forums</a></li>#}
+                    </ul>
+                </div>
+{#                <div class="col-sm-3 footer-">#}
+{#                    <div class="social-networks" style="padding-bottom: 16px; padding-top: 30px; text-align: center">#}
+{#                        <a style="color: #f9f9f9; padding: 10px; text-decoration: none; transition: 0.2s;" href="#" class="twitter"><i class="fa fa-twitter"></i></a>#}
+{#                        <a style="color: #f9f9f9; padding: 10px; text-decoration: none; transition: 0.2s;" href="#" class="facebook"><i class="fa fa-facebook"></i></a>#}
+{#                        <a style="color: #f9f9f9; padding: 10px; text-decoration: none; transition: 0.2s;" href="#" class="google"><i class="fa fa-google-plus"></i></a>#}
+{#                    </div>#}
+{#                    <button type="button" class="btn btn-default">Contact us</button>#}
+{#                </div>#}
+            </div>
+        </div>
+
+        <div class="footer-copyright " style="padding: 3px 0; text-align: center;">
+            &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong style="color: #ffffff">{{ config.company_name }}</strong></a>.
+        </div>
+    </footer>
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script>
+        (() => {
+            $('#occupation').change(function () {
+                if ($(this).val() === 'Other') {
+                    $('.form-group.other-occupation').show();
+                    $('.form-group.other-occupation input').attr('name', 'occupation');
+                    $('.form-group.occupation select').removeAttr('name');
+                } else {
+                    $('.form-group.other-occupation').hide();
+                    $('.form-group.other-occupation input').removeAttr('name', 'occupation');
+                    $('.form-group.occupation select').attr('name', 'occupation');
+                }
+            });
+            {% if messages %}
+                {% for msg in messages %}ikwen.showFloatingNotice('{{ msg|safe }}', '{{ msg.tags }}', 6);{% endfor %}
+            {% endif %}
+        })()
+    </script>
+{% endblock %}

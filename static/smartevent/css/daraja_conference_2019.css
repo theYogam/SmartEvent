@@ -1,0 +1,52 @@
+.second-section {background: #F6F6F6;}
+
+.navbar-default .navbar-nav>li>a {color: #fff!important;}
+
+/*.navbar-header {background: rgba(8, 1, 58, 0.92)!important;}*/
+
+.navbar.navbar-default.navbar-static-top {background: rgba(8, 1, 58, 0.92)!important;}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {color: #fff;}
+
+.menu-button {color: #fff;}
+
+.icon-bar {background: #fff!important;}
+
+.banner-top {background: rgb(2,0,36) url(../img/daraja_conf.jpg) center center no-repeat ; background-size: cover; font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif; height: 800px;}
+
+.banner-container {background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(4,2,57,0.9165186093968838) 35%, rgba(36,36,198,0.9473309343268558) 63%, rgba(43,43,209,1) 100%, rgba(0,212,255,1) 100%); z-index: 200; width: inherit; height: inherit;}
+
+.watch-previous-session {float: none; margin: 15vh auto auto;}
+
+.watch-previous-session button {background-color: #fc9c3a; border-color: #fc9c3a; padding-left: 0; padding-right: 0;}
+
+.parent-header {padding-top: 300px; float: none; margin: auto; color: #fff;}
+
+#content {padding-top: 20px; padding-bottom: 50px;}
+.header {float: none; margin: auto; text-align: center; position: static; transition: all 2s ease-in-out}
+
+.header h1 {line-height: 50px;}
+.header h2 {line-height: 30px;}
+
+.welcome-message {margin-bottom: 30px; font-weight: 900;}
+
+.confirm-participation {margin-bottom: 40px; line-height: 42px}
+
+.footer-logo {text-align: left;}
+.logo {float: none;}
+.footer-title {color: #ffffff; font-size: 1.8vw; text-align: center; clear: both;}
+
+
+
+body {background: #233682;}
+
+
+@media (max-width: 767px) {
+    .banner-top {height: 600px;}
+    .parent-header {padding-top: 100px;}
+    .watch-previous-session {margin: 7vh auto auto;}
+    .footer-logo {text-align: center;}
+    .footer-title {font-size: 3.9vw;}
+    .footer h5 {font-size: 3.8vw}
+    .footer li {font-size: 2.5vw}
+}

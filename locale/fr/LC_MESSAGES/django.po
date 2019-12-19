@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-19 09:57+0000\n"
+"PO-Revision-Date: 2019-12-19 10:58+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: smartevent/templates/smartevent/home.html:28
+msgid ""
+"\n"
+"                                <h1 class=\"welcome-message\">Welcome to "
+"ikwen Daraja conf 2019 !</h1>\n"
+"                                <p style=\"font-weight: lighter; text-align: "
+"justify\">\n"
+"                                    <h3>Thanks for attending this "
+"conference</h3>\n"
+"\n"
+"                                </p>\n"
+"                            "
+msgstr ""
+"\n"
+"                                <h1 class=\"welcome-message\">Bienvenu à la "
+"conférence de ikwen Daraja 2019 !</h1>\n"
+"                                <p style=\"font-weight: lighter; text-align: "
+"justify\">\n"
+"                                    <h3>Merci d'avoir assisté à cette "
+"conférence</h3>\n"
+"\n"
+"                                </p>\n"
+"                            "
+
+#: smartevent/templates/smartevent/home.html:49
+msgid "Confirm your participation"
+msgstr "Confirmez votre participation"
+
+#: smartevent/templates/smartevent/home.html:55
+msgid "First name:"
+msgstr "Prénom:"
+
+#: smartevent/templates/smartevent/home.html:59
+msgid "Last name:"
+msgstr "Nom:"
+
+#: smartevent/templates/smartevent/home.html:63
+msgid "Email:"
+msgstr "Email:"
+
+#: smartevent/templates/smartevent/home.html:67
+msgid "Phone:"
+msgstr "Téléphone:"
+
+#: smartevent/templates/smartevent/home.html:71
+msgid "Occupation:"
+msgstr "Profession:"
+
+#: smartevent/templates/smartevent/home.html:73
+msgid "Entrepreneur"
+msgstr "Entrepreneur"
+
+#: smartevent/templates/smartevent/home.html:74
+msgid "Digital marketist"
+msgstr "Marketist digital"
+
+#: smartevent/templates/smartevent/home.html:75
+msgid "Media professional"
+msgstr "Professionel média"
+
+#: smartevent/templates/smartevent/home.html:76
+msgid "Influencer"
+msgstr "Influenceur"
+
+#: smartevent/templates/smartevent/home.html:77
+msgid "Seeking to become digital marketist"
+msgstr "Souhaite devenir un marketist digital"
+
+#: smartevent/templates/smartevent/home.html:78
+msgid "Other"
+msgstr "Autre"
+
+#: smartevent/templates/smartevent/home.html:87
+msgid "Leave some words:"
+msgstr "Laissez un message:"
+
+#: smartevent/templates/smartevent/home.html:91
+msgid "Submit"
+msgstr "Envoyer"
+
+#: smartevent/templates/smartevent/home.html:132
+msgid "Get started"
+msgstr "Lancez-vous"
+
+#: smartevent/templates/smartevent/home.html:134
+msgid "Home"
+msgstr "Accueil"
+
+#: smartevent/templates/smartevent/home.html:135
+msgid "Sign In"
+msgstr "Connexion"
+
+#: smartevent/templates/smartevent/home.html:140
+msgid "About us"
+msgstr "À propos"
+
+#: smartevent/templates/smartevent/home.html:142
+msgid "Our Company"
+msgstr "Notre entreprise"
+
+#: smartevent/templates/smartevent/home.html:152
+msgid "Help desk"
+msgstr "Aide"
+
+#~ msgid ""
+#~ "Aww!! It looks like you're not yet login. Please do it before continue..."
+#~ msgstr "SVP!! Connectez-vous pour continuer..."
+
+#~ msgid "Log in"
+#~ msgstr "Connexion"
+
+#~ msgid "Cancel"
+#~ msgstr "Annuler"
