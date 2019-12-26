@@ -29,7 +29,6 @@
                                 <h1 class="welcome-message">Welcome to ikwen Daraja conf 2019 !</h1>
                                 <p style="font-weight: lighter; text-align: justify">
                                     <h3>Thanks for attending this conference</h3>
-
                                 </p>
                             {% endblocktrans %}
 {#                                    In case you missed any of the sessions or want to go back and rewatch your favorites, we’ve got you covered. Recordings of all talks are posted on YouTube. Keep the conversation going using #ikwenConf2019.#}
@@ -188,6 +187,14 @@
             {% if messages %}
                 {% for msg in messages %}ikwen.showFloatingNotice('{{ msg|safe }}', '{{ msg.tags }}', 6);{% endfor %}
             {% endif %}
+
+            $.getJSON("{% url 'smartevent:thankyou' %}", {}, function (data, status, xhr) {
+                if(data.success){
+                    console.log("Emails have completely sent")
+                } else {
+                  console.log("Emails failed to go")
+                }
+            });
         })()
     </script>
 {% endblock %}

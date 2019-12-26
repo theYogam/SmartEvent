@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-19 09:57+0000\n"
-"PO-Revision-Date: 2019-12-19 10:58+0100\n"
+"POT-Creation-Date: 2019-12-25 21:47+0000\n"
+"PO-Revision-Date: 2019-12-25 22:48+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -18,7 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
+#: smartevent/views.py:72 smartevent/views.py:88
+msgid "Start making money now !"
+msgstr "Commencez à gagnez de l'argent maintenant !"
+
 #: smartevent/templates/smartevent/home.html:28
+#, fuzzy
 msgid ""
 "\n"
 "                                <h1 class=\"welcome-message\">Welcome to "
@@ -27,7 +32,6 @@ msgid ""
 "justify\">\n"
 "                                    <h3>Thanks for attending this "
 "conference</h3>\n"
-"\n"
 "                                </p>\n"
 "                            "
 msgstr ""
@@ -42,83 +46,83 @@ msgstr ""
 "                                </p>\n"
 "                            "
 
-#: smartevent/templates/smartevent/home.html:49
+#: smartevent/templates/smartevent/home.html:48
 msgid "Confirm your participation"
 msgstr "Confirmez votre participation"
 
-#: smartevent/templates/smartevent/home.html:55
+#: smartevent/templates/smartevent/home.html:54
 msgid "First name:"
 msgstr "Prénom:"
 
-#: smartevent/templates/smartevent/home.html:59
+#: smartevent/templates/smartevent/home.html:58
 msgid "Last name:"
 msgstr "Nom:"
 
-#: smartevent/templates/smartevent/home.html:63
+#: smartevent/templates/smartevent/home.html:62
 msgid "Email:"
 msgstr "Email:"
 
-#: smartevent/templates/smartevent/home.html:67
+#: smartevent/templates/smartevent/home.html:66
 msgid "Phone:"
 msgstr "Téléphone:"
 
-#: smartevent/templates/smartevent/home.html:71
+#: smartevent/templates/smartevent/home.html:70
 msgid "Occupation:"
 msgstr "Profession:"
 
-#: smartevent/templates/smartevent/home.html:73
+#: smartevent/templates/smartevent/home.html:72
 msgid "Entrepreneur"
 msgstr "Entrepreneur"
 
-#: smartevent/templates/smartevent/home.html:74
+#: smartevent/templates/smartevent/home.html:73
 msgid "Digital marketist"
 msgstr "Marketist digital"
 
-#: smartevent/templates/smartevent/home.html:75
+#: smartevent/templates/smartevent/home.html:74
 msgid "Media professional"
 msgstr "Professionel média"
 
-#: smartevent/templates/smartevent/home.html:76
+#: smartevent/templates/smartevent/home.html:75
 msgid "Influencer"
 msgstr "Influenceur"
 
-#: smartevent/templates/smartevent/home.html:77
+#: smartevent/templates/smartevent/home.html:76
 msgid "Seeking to become digital marketist"
 msgstr "Souhaite devenir un marketist digital"
 
-#: smartevent/templates/smartevent/home.html:78
+#: smartevent/templates/smartevent/home.html:77
 msgid "Other"
 msgstr "Autre"
 
-#: smartevent/templates/smartevent/home.html:87
+#: smartevent/templates/smartevent/home.html:86
 msgid "Leave some words:"
 msgstr "Laissez un message:"
 
-#: smartevent/templates/smartevent/home.html:91
+#: smartevent/templates/smartevent/home.html:90
 msgid "Submit"
 msgstr "Envoyer"
 
-#: smartevent/templates/smartevent/home.html:132
+#: smartevent/templates/smartevent/home.html:131
 msgid "Get started"
 msgstr "Lancez-vous"
 
-#: smartevent/templates/smartevent/home.html:134
+#: smartevent/templates/smartevent/home.html:133
 msgid "Home"
 msgstr "Accueil"
 
-#: smartevent/templates/smartevent/home.html:135
+#: smartevent/templates/smartevent/home.html:134
 msgid "Sign In"
 msgstr "Connexion"
 
-#: smartevent/templates/smartevent/home.html:140
+#: smartevent/templates/smartevent/home.html:139
 msgid "About us"
 msgstr "À propos"
 
-#: smartevent/templates/smartevent/home.html:142
+#: smartevent/templates/smartevent/home.html:141
 msgid "Our Company"
 msgstr "Notre entreprise"
 
-#: smartevent/templates/smartevent/home.html:152
+#: smartevent/templates/smartevent/home.html:151
 msgid "Help desk"
 msgstr "Aide"
 
