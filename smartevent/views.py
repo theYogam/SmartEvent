@@ -64,49 +64,32 @@ def thankyou(request, *args, **kwargs):
 
     sender = 'ikwen Daraja <no-reply@ikwen.com>'
 
-    # for dara in dara_list:
-    #     dara_lang = dara.member.language
-    #     activate(dara_lang)
-    #     dara_name = dara.member.full_name
-    #     dara_email = dara.member.email
-    #     subject = _("Start making money now !")
-    #     html_content = get_mail_content(subject, template_name='smartevent/mails/thank-you.html',
-    #                                     extra_context={'dara_name': dara_name,
-    #                                                    'cta_url': cta_url})
-    #     msg = EmailMessage(subject, html_content, sender, [dara_email])
-    #     msg.content_subtype = "html"
-    #     Thread(target=lambda m: m.send(), args=(msg,)).start()
-    #     dara_email_list.append(dara_email)
-    #
-    # for participant in participant_list:
-    #     if participant.email in dara_email_list:
-    #         continue
-    #     lang = 'fr'
-    #     activate(lang)
-    #     dara_name = participant.first_name
-    #     dara_email = participant.email
-    #     subject = _("Start making money now !")
-    #     html_content = get_mail_content(subject, template_name='smartevent/mails/thank-you.html',
-    #                                     extra_context={'dara_name': dara_name,
-    #                                                    'cta_url': cta_url,
-    #                                                    })
-    #     msg = EmailMessage(subject, html_content, sender, [dara_email])
-    #     msg.content_subtype = "html"
-    #     Thread(target=lambda m: m.send(), args=(msg,)).start()
-    #
-    # response = {"success": True}
-    # return HttpResponse(json.dumps(response), 'content-type: text/json')
-
-    dara_list = [{'email': 'silatchomsiaka@gmail.com', 'name': 'Silatchom'},
-                 {'email': 'rsihon@gmail.com', 'name': 'Sihon'},
-                 {'email': 'wilfriedwillend@gmail.com', 'name': 'Wilfried'},
-                 {'email': 'cedricfotso1@gmail.com', 'name': 'Cedric'}]
-
     for dara in dara_list:
+        dara_lang = dara.member.language
+        activate(dara_lang)
+
+        if dara_lang == 'en':
+            cta_url = 'https://blog.ikwen.com/from-social-network-to-daraja/'
+
+        dara_name = dara.member.first_name
+        dara_email = dara.member.email
+        subject = _("Start making money now !")
+        html_content = get_mail_content(subject, template_name='smartevent/mails/thank-you.html',
+                                        extra_context={'dara_name': dara_name,
+                                                       'cta_url': cta_url})
+        msg = EmailMessage(subject, html_content, sender, [dara_email])
+        msg.content_subtype = "html"
+        msg.extra_headers = {'Reply-To': 'contact@ikwen.com'}
+        Thread(target=lambda m: m.send(), args=(msg,)).start()
+        dara_email_list.append(dara_email)
+
+    for participant in participant_list:
+        if participant.email in dara_email_list:
+            continue
         lang = 'fr'
         activate(lang)
-        dara_name = dara.get('name')
-        dara_email = dara.get('email')
+        dara_name = participant.first_name
+        dara_email = participant.email
         subject = _("Start making money now !")
         html_content = get_mail_content(subject, template_name='smartevent/mails/thank-you.html',
                                         extra_context={'dara_name': dara_name,
@@ -118,5 +101,28 @@ def thankyou(request, *args, **kwargs):
 
     response = {"success": True}
     return HttpResponse(json.dumps(response), 'content-type: text/json')
+
+    # dara_list = [{'email': 'silatchomsiaka@gmail.com', 'name': 'Silatchom'},
+    #              {'email': 'rsihon@gmail.com', 'name': 'Sihon'},
+    #              {'email': 'wilfriedwillend@gmail.com', 'name': 'Wilfried'},
+    #              {'email': 'cedricfotso1@gmail.com', 'name': 'Cedric'}]
+    #
+    # for dara in dara_list:
+    #     lang = 'fr'
+    #     activate(lang)
+    #     dara_name = dara.get('name')
+    #     dara_email = dara.get('email')
+    #     subject = _("Start making money now !")
+    #     html_content = get_mail_content(subject, template_name='smartevent/mails/thank-you.html',
+    #                                     extra_context={'dara_name': dara_name,
+    #                                                    'cta_url': cta_url,
+    #                                                    })
+    #     msg = EmailMessage(subject, html_content, sender, [dara_email])
+    #     msg.content_subtype = "html"
+    #     msg.extra_headers = {'Reply-To': 'contact@ikwen.com'}
+    #     Thread(target=lambda m: m.send(), args=(msg,)).start()
+    #
+    # response = {"success": True}
+    # return HttpResponse(json.dumps(response), 'content-type: text/json')
 
 

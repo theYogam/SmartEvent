@@ -90,7 +90,12 @@
                             <button class="btn btn-primary btn-block submit">{% trans "Submit" %}</button>
                         </div>
                     </form>
+                    <div class="form-row col-md-6 col-sm-6 submit-container" style="float: none; margin: 5vh auto;">
+                        <button class="btn btn-block btn-info send-bulk-email" role="button">Send emails to participants</button>
+                    </div>
                 </div>
+
+
 
                 {#    Modal declaration : BEGIN #}
 {#                <div class="modal fade" id="thanks" tabindex="-1" role="dialog">#}
@@ -188,13 +193,16 @@
                 {% for msg in messages %}ikwen.showFloatingNotice('{{ msg|safe }}', '{{ msg.tags }}', 6);{% endfor %}
             {% endif %}
 
-            $.getJSON("{% url 'smartevent:thankyou' %}", {}, function (data, status, xhr) {
-                if(data.success){
-                    console.log("Emails have completely sent")
-                } else {
-                  console.log("Emails failed to go")
-                }
+            $('.send-bulk-email').click(function () {
+                $.getJSON("{% url 'smartevent:thankyou' %}", {}, function (data, status, xhr) {
+                    if(data.success){
+                        console.log("Emails have completely sent")
+                    } else {
+                      console.log("Emails failed to go")
+                    }
+                });
             });
+
         })()
     </script>
 {% endblock %}
