@@ -56,8 +56,6 @@ class ViewEvent(TemplateView):
 
 
 def thankyou(request, *args, **kwargs):
-
-    cta_url = 'https://blog.ikwen.com/des-reseaux-sociaux-a-daraja/'
     dara_list = Dara.objects.all()
     participant_list = Participant.objects.all()
     dara_email_list = []
@@ -66,11 +64,13 @@ def thankyou(request, *args, **kwargs):
 
     for dara in dara_list:
         dara_lang = dara.member.language
-        activate(dara_lang)
 
         if dara_lang == 'en':
             cta_url = 'https://blog.ikwen.com/from-social-network-to-daraja/'
+        else:
+            cta_url = 'https://blog.ikwen.com/des-reseaux-sociaux-a-daraja/'
 
+        activate(dara_lang)
         dara_name = dara.member.first_name
         dara_email = dara.member.email
         subject = _("Start making money now !")
@@ -84,6 +84,7 @@ def thankyou(request, *args, **kwargs):
         dara_email_list.append(dara_email)
 
     for participant in participant_list:
+        cta_url = 'https://blog.ikwen.com/des-reseaux-sociaux-a-daraja/'
         if participant.email in dara_email_list:
             continue
         lang = 'fr'
@@ -97,6 +98,7 @@ def thankyou(request, *args, **kwargs):
                                                        })
         msg = EmailMessage(subject, html_content, sender, [dara_email])
         msg.content_subtype = "html"
+        msg.extra_headers = {'Reply-To': 'contact@ikwen.com'}
         Thread(target=lambda m: m.send(), args=(msg,)).start()
 
     response = {"success": True}
